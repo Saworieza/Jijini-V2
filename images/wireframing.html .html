@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)file:///home/cynthia/Desktop/Jijini%20Family/templated-breadth/wireframing.html? -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+	/*3 custom fonts(handwriting style)*/
+@import url('http://fonts.googleapis.com/css?family=Delius|Walter+Turncoat|Permanent+Marker');
+/*fontawesome icon font*/
+@import url('http://thecodeplayer.com/uploads/fonts/font-awesome-4.1.0/css/font-awesome.min.css');
+
+/*basic reset*/
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+/* Apply border image/style/color but not width to: 
+	1. elements with class attribute containing 'wb'
+	2. Direct/1st level children of elements with class attr containing 'wb-child'
+*/
+[class*='wb'], [class*='wb-child'] > * {
+	/*solid border color(fallback)*/
+	border: 0px solid #aaa;
+	/*Cloud image sliced at 2px from all sides as border-image*/
+	border-image: url('http://thecodeplayer.com/u/m/clouds.png') 2 stretch;
+}
+/*border widths*/
+/*all sides*/
+.wb, .wb-child > * {border-width: 2px;}
+/*single sides*/
+.wb-top, .wb-child-top > * {border-top-width: 2px;}
+.wb-right, .wb-child-right > * {border-right-width: 2px;}
+.wb-bottom, .wb-child-bottom > * {border-bottom-width: 2px;}
+.wb-left, .wb-child-left > * {border-left-width: 2px;}
+
+/*preventing certain elements from using their default border/bg styles*/
+form, input, textarea, table, button, select, optgroup, option {
+	font: inherit; color: inherit; background: transparent;
+}
+
+/*general styles*/
+body {
+	font: bold 12px/18px Delius; color: white;
+	background: url('http://thecodeplayer.com/u/m/wfbg.png');
+}
+a {
+	text-decoration: none; color: white;
+	cursor: pointer; /*since all links will be dummy*/
+}
+
+
+.wrapper {width: 320px; margin: 50px auto; border-bottom-width: 0;}
+
+.black-bar {padding: 2px 4px; background: rgba(0, 0, 0, 0.25);}
+.battery {float: right;}
+.network {float: left;}
+.time {text-align: center;}
+
+.search-box {padding: 5px; overflow: hidden;}
+.search-input, .search-button {padding: 10px; font-size: 14px; float: left;}
+.search-input {width: 70%; margin-right: 2%;}
+.search-button { width: 28%; background: rgba(255, 255, 255, 0.15);}
+
+.categories {overflow: hidden; background: rgba(0, 0, 0, 0.35);}
+.categories a {
+	display: block; float: left; width: 50%; text-align: center;
+	font: bold 18px/50px 'Walter Turncoat';
+}
+
+.search-head {padding: 10px; background: rgba(0, 0, 0, 0.2);}
+.search-head button { float: right; padding: 2px 10px; background: rgba(255, 255, 255, 0.1);}
+.search-head h2 {padding: 3px 0; font: normal 18px/20px 'Permanent Marker';}
+
+.search-results li {list-style-type: none; overflow: hidden; padding: 10px;}
+.thumb {height: 60px; width: 60px; float: left; margin-right: 10px; text-align: center; background: rgba(0, 0, 0, 0.15);}
+.thumb .fa {font-size: 32px; line-height: 60px; opacity: 0.15;}
+
+/*smaller thumbs for authors*/
+.author-thumb {width: 32px; height: 32px;}
+.author-thumb .fa {font-size: 18px; line-height: 32px; }
+
+.book-name {font: bold 18px 'Walter Turncoat'; display: block; margin-top: 7px;}
+.author-name {font-size: 14px; line-height: 32px;}
+</style>
+</head>
+<body>
+<!-- markup time -->
+<div class="wrapper wb">
+	
+	<div class="black-bar wb-bottom">
+		<div class="battery">22% <i class="fa fa-bolt"></i></div>
+		<div class="network"><i class="fa fa-signal"></i> AT&amp;T</div>
+		<div class="time">12:34 PM</div>
+	</div>
+	
+	<div class="search-box wb-bottom">
+		<form>
+			<input type="text" class="search-input wb" placeholder="Search...">
+			<input type="submit" class="search-button wb" value="Go">
+		</form>
+	</div>
+	
+	<div class="categories wb-bottom">
+		<a class="wb-right">Length</a>
+		<a>Category</a>
+	</div>
+	
+	<div class="search-results">
+		<!-- book listing -->
+		<div class="search-head wb-bottom">
+			<button class="wb">Show all 48 titles</button>
+			<h2>Books</h2>
+		</div>
+		<ul class="wb-child-bottom">
+			<li>
+				<div class="thumb wb"><i class="fa fa-book"></i></div>
+				<a class="book-name">Drift</a>
+				<span>By Marlene Gybson</span>
+			</li>
+			<li>
+				<div class="thumb wb"><i class="fa fa-book"></i></div>
+				<a class="book-name">What the Nanny...</a>
+				<span>By Vivian Bandy</span>
+			</li>
+		</ul>
+		<!-- author listing -->
+		<div class="search-head wb-bottom">
+			<button class="wb">Show all 6 authors</button>
+			<h2>Authors</h2>
+		</div>
+		<ul class="wb-child-bottom">
+			<li>
+				<div class="thumb author-thumb wb"><i class="fa fa-user"></i></div>
+				<a class="author-name">Carmen A. Maher</a>
+			</li>
+			<li>
+				<div class="thumb author-thumb wb"><i class="fa fa-user"></i></div>
+				<a class="author-name">Willie Poon</a>
+			</li>
+		</ul>
+	</div>
+	
+	
+</div>
+
+
+
+</body></html>
